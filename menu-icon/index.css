@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 32px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.menu-icon {
+  background-color: black;
+  width: 90px;
+  height: 18px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.menu-icon::before {
+  content: '';
+  background-color: black;
+  width: 90px;
+  height: 18px;
+  border-radius: 10px;
+  position: absolute;
+  top: -23px;
+}
+
+.menu-icon::after {
+  content: '';
+  background-color: black;
+  width: 90px;
+  height: 18px;
+  border-radius: 10px;
+  position: absolute;
+  bottom: -23px;
+}
