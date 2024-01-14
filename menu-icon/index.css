@@ -16,30 +16,51 @@ body {
   min-width: 100vw;
 }
 
-.menu-icon {
-  background-color: black;
-  width: 90px;
-  height: 18px;
-  border-radius: 10px;
+.menu-button {
+  background-color: transparent;
+  border: none;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
+  border: 1px solid red;
 }
 
-.menu-icon::before {
-  content: '';
-  background-color: black;
-  width: 90px;
-  height: 18px;
-  border-radius: 10px;
-  position: absolute;
-  top: -23px;
-}
-
+.menu-icon,
+.menu-icon::before,
 .menu-icon::after {
-  content: '';
   background-color: black;
-  width: 90px;
-  height: 18px;
-  border-radius: 10px;
+  width: 40px;
+  height: 5px;
+  border-radius: 5px;
   position: absolute;
-  bottom: -23px;
+  transition: all 0.5s;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+  content: "";
+}
+
+.menu-icon::before{
+  transform: translateY(-12px);
+}
+
+.menu-icon::after{
+  transform: translateY(12px);
+}
+
+:is(.menu-button:hover, .menu-button:focus-within) .menu-icon {
+  background-color: transparent;
+  /* transform: rotate(360deg); */
+}
+
+:is(.menu-button:hover, .menu-button:focus-within) .menu-icon:before {
+  transform: rotate(45deg);
+}
+
+:is(.menu-button:hover, .menu-button:focus-within) .menu-icon:after {
+  transform: rotate(-45deg);
 }
